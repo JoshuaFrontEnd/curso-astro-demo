@@ -4,25 +4,25 @@ import Header from '../components/Header.astro';
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body class="bg-gray-900 min-h-screen pn-32 text-sky-100">
-		<Header />
-		<main class="max-w-5xl px-4 m-auto">
-			<slot />
-		</main>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Basics</title>
+  </head>
+  <body class="bg-gray-900 min-h-screen pn-32 text-sky-100">
+    <Header />
+    <main class="max-w-5xl px-4 m-auto">
+      <slot />
+    </main>
+  </body>
 </html>
 
 <style is:global>
-	html,
-	body {
-		margin: 0;
-		color-scheme: dark light;
-	}
+  html,
+  body {
+    margin: 0;
+    color-scheme: dark light;
+  }
 </style>
