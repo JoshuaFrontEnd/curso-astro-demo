@@ -7,7 +7,8 @@ interface Props {
   flightNumber: number;
 }
 
-const { id, img, flightNumber, details } = Astro.props;
+const { id, details, img, success, flightNumber } = Astro.props;
+const launchStatus = success ? 'Success' : 'Failure';
 ---
 
 <a
@@ -19,8 +20,21 @@ const { id, img, flightNumber, details } = Astro.props;
   </picture>
 
   <header class="p-4 flex-grow">
-    <span class={`text-xs font-semibold mr-2 px-2.5 py-0.5 rounded`}
-      >Por hacer</span
+    <!-- Forma de renderizado condicional de clases tradicional -->
+    <!-- <span
+      class={`
+      ${success ? 'bg-green-400 text-green-900' : 'bg-red-400 text-red-900'}
+      text-xs font-semibold mr-2 px-2.5 py-0.5 rounded`}>{launchStatus}</span
+    > -->
+    <!-- Forma de renderizado condicional de clases en Astro -->
+    <span
+      class:list={[
+        'text-xs font-semibold mr-2 px-2.5 py-0.5 rounded',
+        {
+          'bg-green-400 text-green-900': success,
+          'bg-red-400 text-red-900': !success,
+        },
+      ]}>{launchStatus}</span
     >
 
     <h2 class="my-2 text-2xl font-bold tracking-tight text-white">
